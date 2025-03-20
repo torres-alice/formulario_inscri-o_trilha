@@ -27,16 +27,17 @@ Este é um formulário de inscrição desenvolvido em HTML e CSS.
    ```bash
    git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
-2. ** Abra o arquivo index.html:
+2. **Abra o arquivo index.html**:
 
 - Basta abrir o arquivo index.html no seu navegador para visualizar o formulário.
 
-3. **Preencha o formulário:
+3. **Preencha o formulário**:
 
 - Preencha todos os campos obrigatórios e selecione uma trilha de aprendizagem.
 
 - Clique em "Enviar inscrição" para finalizar.
+  #
 
 ![tenor (2)](https://github.com/user-attachments/assets/09e13bc2-dc20-4098-948a-633544b4bafd)
-
+#
 
