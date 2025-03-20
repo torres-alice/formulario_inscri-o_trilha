@@ -25,8 +25,7 @@ Este é um formulário de inscrição desenvolvido em HTML e CSS.
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
-
+   git clone https://github.com/torres-alice/formulario_inscri-o_trilha.git
 2. **Abra o arquivo index.html**:
 
 - Basta abrir o arquivo index.html no seu navegador para visualizar o formulário.
