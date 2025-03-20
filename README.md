@@ -36,8 +36,8 @@ Este é um formulário de inscrição desenvolvido em HTML e CSS.
 - Preencha todos os campos obrigatórios e selecione uma trilha de aprendizagem.
 
 - Clique em "Enviar inscrição" para finalizar.
-  #
-
+  
+#
 ![tenor (2)](https://github.com/user-attachments/assets/09e13bc2-dc20-4098-948a-633544b4bafd)
 #
 
