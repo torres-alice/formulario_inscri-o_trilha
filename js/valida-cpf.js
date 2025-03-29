@@ -1,57 +1,67 @@
-export default function ehUmCPF(campo) {
-    const cpf = campo.value.replace(/\.|-/g, "");
-    if(validaNumerosRepetidos(cpf) || validaPrimeiroDigito(cpf) || validaSegundoDigito(cpf)) {
-        console.log("Por favor, insira um CPF válido")
-    } else {
-        console.log("CPF existe")
-    }
-}
-function validaNumerosRepetidos(cpf) {
-    const validaNumerosRepetidos = [
-        '00000000000',
-        '11111111111',
-        '22222222222',
-        '33333333333',
-        '44444444444',
-        '55555555555',
-        '66666666666',
-        '77777777777',
-        '88888888888',
-        '99999999999'
-    ]
-     return validaNumeorosRepetidos.includes(cpf);
+function formatarCPF(cpf) {
+    
+    cpf = cpf.replace(/\D/g, '');
+    
+    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+    cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    
+    return cpf;
 }
 
-function validaPrimeiroDigito(cpf) {
+function validarCPF(cpf) {
+    
+    cpf = cpf.replace(/\D/g, '');
+    
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
+        return false;
+    }
+    
     let soma = 0;
-    let multiplicador = 10;
-
-    for(let tamanho = 0; tamanho < 9; tamanho++) {
-        soma += cpf[tamanho] * multiplicador;
-        multiplicador--;
+    for (let i = 0; i < 9; i++) {
+        soma += parseInt(cpf.charAt(i)) * (10 - i);
     }
-
-    soma = (soma * 10) % 11;
-
-    if (soma == 10 || soma == 11) {
-        soma = 0;
+    let resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.charAt(9))) {
+        return false;
     }
-    return soma != cpf[9];
+    
+    soma = 0;
+    for (let i = 0; i < 10; i++) {
+        soma += parseInt(cpf.charAt(i)) * (11 - i);
+    }
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.charAt(10))) {
+        return false;
+    }
+    
+    return true;
 }
 
-function validaSegundoDigito(cpf) {
-  let soma = 0;
-  let multiplicador = 11;
+function verificarCPF(cpfInput) {
 
-  for (let tamanho = 0; tamanho < 10; tamanho++) {
-    soma += cpf[tamanho] * multiplicador;
-    multiplicador--;
-  }
+    cpfInput.value = formatarCPF(cpfInput.value);
+    
+    if (!validarCPF(cpfInput.value)) {
 
-  soma = (soma * 10) % 11;
-
-  if (soma == 10 || soma == 11) {
-    soma = 0;
-  }
-  return soma != cpf[10];
+        let erro = cpfInput.nextElementSibling;
+        if (!erro || !erro.classList.contains('erro-cpf')) {
+            erro = document.createElement('div');
+            erro.className = 'erro-cpf';
+            erro.style.color = 'red';
+            erro.style.marginTop = '5px';
+            erro.style.fontSize = '0.8em';
+            cpfInput.parentNode.insertBefore(erro, cpfInput.nextSibling);
+        }
+        erro.textContent = 'CPF inválido! Por favor, digite um CPF válido.';
+        cpfInput.focus();
+        throw new Error('CPF inválido');
+    } else {
+        const erro = cpfInput.nextElementSibling;
+        if (erro && erro.classList.contains('erro-cpf')) {
+            erro.remove();
+        }
+    }
 }
