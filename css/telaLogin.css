@@ -1,0 +1,40 @@
+body {
+    background-image: url(/assets/Group\ 2\ \(1\).png);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(250, 250, 246);
+}
+.login-container {
+    background-color: #0056b3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 300px;
+    text-align: center;
+}
+.login {
+      color: aliceblue;
+}
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    width: 85%;
+    padding: 10px;
+    background: orangered;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #b34800;
+}

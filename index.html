@@ -5,10 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Inscrição</title>    
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div class="container">
+        <nav>
+            <ul class="opcoes">
+            <li><a href="https://secti.ma.gov.br/uploads/secti/docs/EDITAL_SECTI_FAPEMA_N%C2%BA_07_2024_%E2%80%93_TRILHAS_2B.pdf">Edital Trilha</a></li>
+            <li><a href="/telaLogin.html">Fazer login</a></li>
+        </ul>
+        </nav>
         <div class="ilustracao">
             <img src="/assets/Ilustration.png" alt="ilustração"> 
         </div>
@@ -132,6 +138,8 @@
                 <label   for="termos">Declaro que li e concordo com os <a href="#">Termos e Condições</a> e com a <a href="#">Política de Privacidade</a></label><br><br>
             </div>    
             <div class="botoes">
+                <button type="submit" class="botao__cancelar" value="Cancelar">Salvar Informações</button>
+
                 <button type="reset" class="botao__cancelar" value="Cancelar">Cancelar</button>
 
                 <button type="submit" class="botao__enviar" value="Fazer inscrição">Enviar inscrição</button>   
