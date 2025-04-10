@@ -1,6 +1,6 @@
 # Formulário de Inscrição 
 
-Este é um formulário de inscrição desenvolvido em HTML e CSS. 
+Este é um formulário de inscrição desenvolvido em HTML, CSS e Javascript. 
 
 - Formulário de inscrição com campos para:
   - Nome completo
@@ -13,12 +13,14 @@ Este é um formulário de inscrição desenvolvido em HTML e CSS.
   - Endereço residencial (CEP, rua, número, cidade, estado)
   - Comprovante de residência (upload)
   - Seleção de trilha de aprendizagem (Front-end, Back-end, Jogos, UX Design, Ciência de Dados)
-- Botões de "Voltar", "Cancelar" e "Enviar inscrição".
+  - Id de usúario e senha
+  - Botões de "Salvar as informações", "Cancelar" e "Enviar inscrição".
 
 ## Tecnologias Utilizadas
 
 - **HTML5**: Estrutura do formulário.
 - **CSS3**: Estilização e responsividade.
+- **JavaScript**: para as funcionalidades.
 
 
 ## Como Usar
